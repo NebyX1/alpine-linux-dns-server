@@ -1,0 +1,21 @@
+zone "localglobalisp.com" {
+    type master;
+    file "/etc/bind/db.localglobalisp.com";
+};
+
+zone "1.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.1.168.192.in-addr.arpa";
+};
+
+// Agregamos la siguiente zona para la resolución inversa de 127.0.0.1
+zone "0.0.127.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.127";
+};
+
+//Agregamos la zona inversa para IPv6 
+zone "0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa" {
+    type master;
+    file "/etc/bind/db.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa";
+};

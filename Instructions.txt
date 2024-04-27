@@ -1,0 +1,33 @@
+Crear directorio de Caché:
+    >mkdir -p /var/cache/bind
+
+Garantir permisos al usuario named del caché:
+    >chown -R named:named /var/cache/bind
+    >chmod -R 775 /var/cache/bind
+
+Otorgar permisos al usuario named para acceder al archivo de opciones:
+    >chown named:named /etc/bind/named.conf /etc/bind/named.conf.options
+    >chmod 640 /etc/bind/named.conf /etc/bind/named.conf.options
+
+Otorgar permisos de uso de los archivos de zona y zona inversa:
+    >chown named:named /etc/bind/db.localglobalisp.com
+    >chown named:named /etc/bind/db.1.168.192.in-addr.arpa
+
+Correr Bind bajo el usuario "named"
+    >named -u named -g
+
+Consulta dentro del Contenedor para ver si levanta el servidor correctamente:
+    >dig @localhost localglobalisp.com
+
+Probar el Servidor DNS externamente al contenedor (Powershell):
+    >ping 127.0.0.1
+    >Test-NetConnection -ComputerName 127.0.0.1 -Port 53
+    >nslookup localglobalisp.com 127.0.0.1
+    >nslookup localglobalisp.com
+    >nslookup 127.0.0.1
+
+
+***Test Server Connections: Powershell***
+
+Verificar conexiones del Contenedor:
+    >docker ps -a | Select-String "boring_dijkstra" // dentro de las comillas va el nombre del contenedor

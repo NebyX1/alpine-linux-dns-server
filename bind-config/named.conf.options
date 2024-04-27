@@ -1,0 +1,7 @@
+options {
+    directory "/var/cache/bind";
+    recursion yes;
+    allow-query { any; };
+    listen-on port 53 { any; };
+    listen-on-v6 port 53 { any; };
+};

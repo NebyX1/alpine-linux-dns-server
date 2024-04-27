@@ -1,0 +1,27 @@
+{
+    "name": "Alpine Bind9 DNS Server",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "/bin/bash"
+                    }
+                }
+            },
+            "extensions": []
+        }
+    },
+    "runArgs": [
+        "-p", "53:53/tcp",
+        "-p", "53:53/udp"
+    ],
+    "appPort": [
+        "53/tcp",
+        "53/udp"
+    ]
+}

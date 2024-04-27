@@ -1,0 +1,9 @@
+$TTL    604800
+@       IN      SOA     ns.localglobalisp.com. admin.localglobalisp.com. (
+                            2024042702  ; Serial
+                            604800      ; Refresh
+                            86400       ; Retry
+                            2419200     ; Expire
+                            604800 )    ; Negative Cache TTL
+@       IN      NS      ns.localglobalisp.com.
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa. IN PTR localhost.localglobalisp.com.
